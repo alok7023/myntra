@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
+//My routes
+const authRoutes = require('./routes/auth');
 
 
 // Database Connection
@@ -22,8 +24,16 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
 
+//My Routes
+app.use('/api', authRoutes);
+
+
+
+// PORT
 const port = process.env.PORT || 8000;
 
+
+//Starting a server
 app.listen(port, () => {
     console.log(`app is running at ${port}`);
 })
