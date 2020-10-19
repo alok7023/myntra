@@ -4,12 +4,12 @@ const router = express.Router();
 const {
   getProductById,
   createProduct,
-  //getProduct,
-  //photo,
-  //updateProduct,
-  //deleteProduct,
-  //getAllProducts,
-  //getAllUniqueCategories,
+  getProduct,
+  photo,
+  updateProduct,
+  deleteProduct,
+  getAllProducts,
+  getAllUniqueCategories,
 } = require('../controllers/product');
 const { isSignedIn, isAuthenticated, isAdmin } = require('../controllers/auth');
 const { getUserById } = require('../controllers/user');
@@ -28,7 +28,7 @@ router.post(
   isAdmin,
   createProduct
 );
-/*
+
 // read routes
 router.get('/product/:productId', getProduct);
 router.get('/product/photo/:productId', photo);
@@ -55,5 +55,5 @@ router.put(
 router.get('/products', getAllProducts);
 
 router.get('/products/categories', getAllUniqueCategories);
-*/
+
 module.exports = router;
